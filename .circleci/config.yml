@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/wbooks-api
+    working_directory: ~/rails-training
 
     docker:
       - image: circleci/ruby:2.5-stretch-node
@@ -52,7 +52,7 @@ jobs:
       #     command: bundle exec rspec 
 
 workflows:
-  version: 2.1
+  version: 2
   build:
     jobs:
       - build
