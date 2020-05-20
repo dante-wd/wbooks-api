@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/rails-training
+    working_directory: ~/wbooks-api
 
     docker:
       - image: circleci/ruby:2.5-stretch-node
