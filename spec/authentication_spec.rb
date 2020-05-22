@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 RSpec.describe 'POST /login', type: :request do
-  let(:user) { Fabricate(:user) }
+  let(:user) { create(:user) }
   let(:url) { '/login' }
   let(:params) do
     {
@@ -31,7 +33,7 @@ RSpec.describe 'POST /login', type: :request do
 
   context 'when login params are incorrect' do
     before { post url }
-    
+
     it 'returns unathorized status' do
       expect(response.status).to eq 401
     end

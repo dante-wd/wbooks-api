@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'POST /signup', type: :request do
   let(:url) { '/signup' }
   let(:params) do
@@ -26,7 +28,7 @@ RSpec.describe 'POST /signup', type: :request do
 
   context 'when user already exists' do
     before do
-      Fabricate :user, email: params[:user][:email]
+      create :user, email: params[:user][:email]
       post url, params: params
     end
 
