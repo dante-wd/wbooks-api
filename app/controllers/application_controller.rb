@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       ]
     }, status: :bad_request
   end
-  
+
   protected
 
   def configure_permitted_parameters
