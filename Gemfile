@@ -42,7 +42,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'devise-jwt'
-gem 'rspec'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +49,8 @@ group :development, :test do
   gem 'rubocop'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -67,6 +68,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
