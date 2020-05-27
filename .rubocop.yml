@@ -46,7 +46,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Layout/EndOfLine:
-  EnforcedStyle: crlf
+  EnforcedStyle: lf
 
 Metrics/BlockLength:
   Exclude:
