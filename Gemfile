@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'date_validator'
 end
 
 group :development do
