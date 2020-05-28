@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Book < ApplicationRecord
+  has_one :rent, dependent: :destroy
+
   validates :title, presence: true
   validates :author, presence: true
   validates :year, presence: true

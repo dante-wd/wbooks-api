@@ -2,6 +2,8 @@
 
 # User model
 class User < ApplicationRecord
+  has_many :rent, dependent: :destroy
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   # Include default devise modules. Others available are:
