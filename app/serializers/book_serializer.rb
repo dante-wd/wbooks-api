@@ -11,12 +11,12 @@ module Api
       attribute :image, key: :image_url
 
       def available
-        if object.rent
-          available = false
-        else
-          available = true
-        end
-        return available
+        available = if object.rent
+                      false
+                    else
+                      true
+                    end
+        available
       end
     end
   end
