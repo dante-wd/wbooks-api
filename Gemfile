@@ -47,15 +47,17 @@ gem 'kaminari'
 
 gem 'date_validator'
 
+gem 'active_model_serializers'
+
+gem 'dotenv-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop-rails'
-  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'faker'
-  gem 'active_model_serializers'
 end
 
 group :development do
