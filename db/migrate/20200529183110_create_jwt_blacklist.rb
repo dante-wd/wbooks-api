@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# Blacklist migration
 class CreateJwtBlacklist < ActiveRecord::Migration[5.0]
   def change
     create_table :jwt_blacklist do |t|

@@ -43,6 +43,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise-jwt'
 
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -52,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'date_validator'
+  gem 'active_model_serializers'
 end
 
 group :development do
