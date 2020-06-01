@@ -7,6 +7,11 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+
+Dir[Rails.root.join("spec/models/shared_examples/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join("spec/controllers/shared_examples/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join("spec/models/shared_contexts/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join("spec/controllers/shared_contexts/**/*.rb")].each {|f| require f}
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -33,6 +38,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryBot::Syntax::Methods
