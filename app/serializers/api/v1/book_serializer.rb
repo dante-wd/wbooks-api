@@ -11,7 +11,11 @@ module Api
       attribute :image, key: :image_url
 
       def available
-        available = object.rent[:to] <= Time.zone.today
+        if object.rent
+          available = object.rent[:to] <= Time.zone.today
+        else
+          available = true
+        end
         available
       end
     end
