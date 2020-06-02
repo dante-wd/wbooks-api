@@ -11,7 +11,7 @@ module Api
       attribute :image, key: :image_url
 
       def available
-        available = if object.rent
+        available = if object.rent[:to] > Date.today
                       false
                     else
                       true
