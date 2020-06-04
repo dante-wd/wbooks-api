@@ -11,12 +11,8 @@ module Api
       attribute :image, key: :image_url
 
       def available
-        available = if object.rent
-                      false
-                    else
-                      true
-                    end
-        available
+        rent = object.rents.where(to: object.rents.select('MAX(rents.to)')).first
+        rent ? (rent[:to] <= Time.zone.today) : true
       end
     end
   end
