@@ -13,7 +13,6 @@ describe Api::V1::BooksController, type: :controller do
       end
 
       it 'responds with the books json' do
-        byebug
         expected = ActiveModel::Serializer::CollectionSerializer.new(
           books, each_serializer: Api::V1::BookSerializer, serializer: Api::V1::BookSerializer
         ).to_json
