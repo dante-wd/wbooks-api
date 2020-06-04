@@ -52,6 +52,8 @@ gem 'active_model_serializers'
 gem 'dotenv-rails'
 
 gem 'sidekiq'
+gem 'rack'
+gem 'sinatra'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

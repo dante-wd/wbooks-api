@@ -3,4 +3,8 @@
 
 require_relative 'config/environment'
 
+require 'sidekiq/web'
+
+run Sidekiq::Web
+
 run Rails.application
