@@ -5,9 +5,14 @@ module Api
                  :user_id,
                  :book_id,
                  :from,
-                 :to
-      belongs_to :user
-      belongs_to :book
+                 :to,
+                 :user,
+                 :book
+      def book
+        BookSerializer.new(object.book)
+      end
+
+      delegate :user, to: :object
     end
   end
 end
