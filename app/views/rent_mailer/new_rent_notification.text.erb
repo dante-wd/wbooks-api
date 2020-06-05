@@ -1,3 +1,6 @@
-Rent#new_rent_notification
+Libro alquilado con exito. Detalles:
 
-<%= @greeting %>, find me in app/views/rent_mailer/new_rent_notification.text.erb
+Fecha de creacion: <%= @rent.created_at %>
+Libro: <%= @rent.book %>
+
+El alquiler permanecera vigente desde <%= @rent.from %> hasta <%= @rent.to %>

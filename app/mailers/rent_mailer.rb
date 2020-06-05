@@ -5,9 +5,11 @@ class RentMailer < ApplicationMailer
   #
   #   en.rent_mailer.new_rent_notification.subject
   #
-  def new_rent_notification
-    @greeting = "Hi"
+  def new_rent_notification(rent)
+    @rent = rent
 
-    mail to: "to@example.org"
+    subject = "Alquiler nuevo - ID: " + rent.id.to_s
+
+    mail to: "dantevvp@gmail.com", subject: subject
   end
 end
