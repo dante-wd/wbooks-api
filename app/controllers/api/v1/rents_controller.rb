@@ -17,7 +17,6 @@ module Api
         end
         render json: rent.errors and return unless rent.save
 
-        RentWorker.perform_async(rent.id)
         render json: rent, serializer: Api::V1::RentSerializer and return
       end
 
