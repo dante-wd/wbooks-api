@@ -15,9 +15,9 @@ module Api
         rent = Rent.new(rent_params) do |r|
           r.user_id = current_user.id
         end
-        render json: rent, serializer: Api::V1::RentSerializer and return if rent.save
+        render json: rent.errors and return unless rent.save
 
-        render json: rent.errors and return
+        render json: rent, serializer: Api::V1::RentSerializer and return
       end
 
       def check_book_availability
@@ -27,9 +27,9 @@ module Api
 
       def rent_error(rent)
         if !rent
-          render json: { error: 'Libro no encontrado' }, status: :not_found
+          render json: { error: t(:book_not_found) }, status: :not_found
         elsif !rent.available?
-          render json: { error: 'Libro no disponible' }, status: :unprocessable_entity
+          render json: { error: t(:book_not_available) }, status: :unprocessable_entity
         end
       end
 

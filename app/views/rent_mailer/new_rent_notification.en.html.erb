@@ -1,0 +1,8 @@
+<h2>Book rented successfully.</h2>
+<h3>Details:</h3>
+
+<ul>
+<li>Rent date: <%= @rent.created_at %></li>
+<li>Book: <%= @rent.book %></li>
+</ul>
+<p>This rent will remain valid from <%= @rent.from %> to <%= @rent.to %></p>
