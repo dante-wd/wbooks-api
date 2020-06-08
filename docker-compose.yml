@@ -1,6 +1,6 @@
 #docker-compose.yml
 version: '3'
-services:
+services: 
   db:
     image: postgres
     environment:
@@ -14,6 +14,8 @@ services:
       - '.:/myapp'
   web:
     build: .
+    environment:
+      - SPROCKETS_CACHE=/cache
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/myapp
@@ -22,3 +24,7 @@ services:
     depends_on:
       - db
       - redis
+
+volumes:
+  bundle:
+  cache:
