@@ -7,7 +7,7 @@ module Api
       respond_to :json
 
       def index
-        rents = Rent.where(user_id: current_user.id).page(@page).per(@page_size)
+        rents = policy_scope(Rent).where(user_id: current_user.id).page(@page).per(@page_size)
         render json: rents, each_serializer: Api::V1::RentSerializer
       end
 
