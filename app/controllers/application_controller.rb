@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  include Pundit
+
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
