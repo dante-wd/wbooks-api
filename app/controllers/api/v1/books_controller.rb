@@ -1,6 +1,6 @@
 module Api
   module V1
-    class BooksController < ApplicationController
+    class BooksController < ApiController
       def index
         page_size = params[:page_size]
         page = [params[:page].to_i, Book.page(1).per(page_size).total_pages].min

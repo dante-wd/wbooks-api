@@ -15,4 +15,4 @@
     publisher: Faker::Book.publisher,
     year: Faker::Date.birthday(min_age: 1, max_age: 95).year
   )
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

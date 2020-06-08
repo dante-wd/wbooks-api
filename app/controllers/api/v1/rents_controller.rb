@@ -1,6 +1,6 @@
 module Api
   module V1
-    class RentsController < ApplicationController
+    class RentsController < ApiController
       before_action :authenticate_user!
       before_action :check_book_availability, only: [:create]
       before_action :clean_pagination
