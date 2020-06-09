@@ -17,7 +17,7 @@ module Api
         end
         render json: rent.errors and return unless rent.save
 
-        render json: rent, serializer: Api::V1::RentSerializer and return
+        render json: rent, serializer: Api::V1::RentSerializer, status: :created and return
       end
 
       def check_book_availability
