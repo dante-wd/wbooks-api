@@ -49,8 +49,8 @@ describe Api::V1::RentsController, type: :controller do
       it {expect(response_body).to include("user_id" => (user.id))}
       it {expect(response_body).to include("book_id" => (book.id))}
 
-      it 'responds with 200 status' do
-        expect(response).to have_http_status(:ok)
+      it 'responds with 201 status' do
+        expect(response).to have_http_status(:created)
       end
     end
   end
