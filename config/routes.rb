@@ -19,10 +19,12 @@ Rails.application.routes.draw do
                  },
                  controllers: {
                    sessions:      'sessions',
-                   registrations: 'registrations'
+                   registrations: 'registrations',
+                   omniauth_callbacks: 'omniauth_callbacks'
                  }
       scope module:'books',path:'books' do
         resources :book_suggestions, only: [:index, :create], path:'suggestions'
+        resources :open_library, only: [:index]
         resources :books, only: [:index, :show], path:''
       end
       resources :rents, only: [:index, :create]

@@ -4,5 +4,5 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable,
-         jwt_revocation_strategy: JWTBlacklist
+         jwt_revocation_strategy: JwtDenylist
 end

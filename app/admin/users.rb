@@ -15,6 +15,7 @@ ActiveAdmin.register User do
       f.input :email
       f.input :first_name
       f.input :last_name
+      f.input :locale
     end
     f.actions
   end
