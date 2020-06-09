@@ -21,7 +21,10 @@ Rails.application.routes.draw do
                    sessions:      'sessions',
                    registrations: 'registrations'
                  }
-      resources :books, only: [:index, :show]
+      scope module:'books',path:'books' do
+        resources :book_suggestions, only: [:index, :create], path:'suggestions'
+        resources :books, only: [:index, :show], path:''
+      end
       resources :rents, only: [:index, :create]
       # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     end
