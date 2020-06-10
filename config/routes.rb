@@ -24,7 +24,7 @@ Rails.application.routes.draw do
                  }
       scope module:'books',path:'books' do
         resources :book_suggestions, only: [:index, :create], path:'suggestions'
-        resources :open_library, only: [:index]
+        get '/info' => 'open_library#book_info', :as => :book_info
         resources :books, only: [:index, :show], path:''
       end
       resources :rents, only: [:index, :create]
