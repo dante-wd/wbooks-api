@@ -26,11 +26,9 @@ module Api
       end
 
       def rent_error(rent)
-        if !rent
-          render json: { error: t(:book_not_found) }, status: :not_found
-        elsif !rent.available?
-          render json: { error: t(:book_not_available) }, status: :unprocessable_entity
-        end
+        render json: { error: t(:book_not_found) }, status: :not_found if rent.blank?
+        render json: { error: t(:book_not_available) }, status: :unprocessable_entity unless rent.available?
+        render json: { error: t(:unknown_error) }, status: :unprocessable_entity
       end
 
       def rent_params

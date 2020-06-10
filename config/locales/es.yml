@@ -2,3 +2,4 @@ es:
   hello: "Hola mundo"
   book_not_found: "Libro no encontrado"
   book_not_available: "Libro no disponible"
+  unknown_error: "Error desconocido"

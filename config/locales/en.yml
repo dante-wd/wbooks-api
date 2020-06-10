@@ -33,3 +33,4 @@ en:
   hello: "Hello world"
   book_not_found: "Book not found"
   book_not_available: "Book not available"
+  unknown_error: "Unknown error encountered"
