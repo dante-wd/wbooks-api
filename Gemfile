@@ -61,6 +61,13 @@ gem 'activeadmin', github: 'activeadmin/activeadmin'
 
 gem 'pundit'
 
+gem 'omniauth-google-oauth2'
+
+gem 'wor-paginate'
+
+gem 'httparty'
+gem 'async_request'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

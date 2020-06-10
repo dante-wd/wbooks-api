@@ -34,7 +34,7 @@ module Api
       end
 
       def rent_params
-        params.require(:rent).permit(:book_id, :from, :to)
+        params.require(:rent).permit(:user_id, :book_id, :from, :to)
       end
 
       def page_params
